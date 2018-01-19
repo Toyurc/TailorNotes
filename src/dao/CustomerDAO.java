@@ -22,7 +22,7 @@ public class CustomerDAO {
         Properties properties = new Properties();
 
         // get db properties
-        properties.load(new FileInputStream("/Users/toyosi.adebayo-ige/Desktop/src/tailor.properties"));
+        properties.load(new FileInputStream("tailor.properties"));
 
         String user = properties.getProperty("user");
         String password = properties.getProperty("password");
