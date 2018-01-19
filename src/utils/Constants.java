@@ -21,6 +21,7 @@ public class Constants {
     public static final int SHOULDER_TO_WAIST_COL = 15;
     public static final int BP_COL = 16;
     public static final int NP_COL = 17;
+    public static final int ID_COL = 18;
 
     public static final String ERROR_ = "Error: ";
     public static final String ERROR = "Error";

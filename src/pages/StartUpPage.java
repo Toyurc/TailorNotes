@@ -4,6 +4,7 @@ import dao.CustomerDAO;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import javax.swing.text.View;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
@@ -52,7 +53,9 @@ public class StartUpPage extends JFrame {
             SearchDialog searchDialog = new SearchDialog();
             // show searchDialog
             searchDialog.setVisible(true);
-            searchDialog.setSize(500, 555);
+            searchDialog.setSize(1080, 768);
+            this.setVisible(false);
+            dispose();
         });
         update.setToolTipText("Searches Customer Details");
 

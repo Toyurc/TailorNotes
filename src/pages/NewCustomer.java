@@ -397,7 +397,6 @@ public class NewCustomer extends JDialog {
 
             // close dialog
             setVisible(false);
-
             dispose();
 
             // refresh gui list

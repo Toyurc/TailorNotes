@@ -22,7 +22,7 @@ public class CustomerDAO {
         Properties properties = new Properties();
 
         // get db properties
-        properties.load(new FileInputStream("/Users/toyosi.adebayo-ige/IdeaProjects/TailorApp/src/tailor.properties"));
+        properties.load(new FileInputStream("/Users/toyosi.adebayo-ige/Desktop/src/tailor.properties"));
 
         String user = properties.getProperty("user");
         String password = properties.getProperty("password");
@@ -299,6 +299,13 @@ public class CustomerDAO {
                 np
         );
         return mCustomerObject;
+    }
+
+    public static void main(String [] args) throws Exception {
+        CustomerDAO customerDAO = new CustomerDAO();
+        System.out.println(customerDAO.searchCustomer("Ade"));
+        System.out.println(customerDAO.getAllCustomers());
+
     }
 }
 

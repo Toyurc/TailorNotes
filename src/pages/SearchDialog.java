@@ -16,6 +16,7 @@ public class SearchDialog extends JFrame {
     private JTable table;
     private JTextField textField;
     private CustomerDAO customerDAO;
+    private  JScrollPane scrollPane;
 
     /**
      * Launch the application.
@@ -24,11 +25,14 @@ public class SearchDialog extends JFrame {
         try {
             SearchDialog dialog = new SearchDialog();
             dialog.refreshCustomersView();
-            dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+            dialog.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             dialog.setVisible(true);
+            CustomerDAO mCustomerDAO = new CustomerDAO();
+            mCustomerDAO.getAllCustomers();
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
 
     /**
@@ -43,6 +47,8 @@ public class SearchDialog extends JFrame {
 
         table = new JTable();
         contentPanel.add(table);
+        scrollPane = new JScrollPane(table);
+        getContentPane().add(scrollPane, BorderLayout.CENTER);
 
         try {
             customerDAO = new CustomerDAO();
@@ -134,10 +140,10 @@ public class SearchDialog extends JFrame {
                     return;
                 }
 
-                // get the current employee
+                // get the current customer
                 CustomerObject someCustomerObject = (CustomerObject) table.getValueAt(row, Constants.OBJECT_COL);
 
-                // delete the employee
+                // delete the customer
                 customerDAO.deleteCustomer(someCustomerObject.getId());
 
                 // refresh GUI
@@ -162,6 +168,8 @@ public class SearchDialog extends JFrame {
 
         JButton cancelButton = new JButton("Cancel");
         cancelButton.addActionListener((ActionEvent arg0) -> {
+            StartUpPage startUpPage = new StartUpPage();
+            startUpPage.setVisible(true);
             setVisible(false);
             dispose();
         });

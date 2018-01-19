@@ -9,7 +9,6 @@ import java.util.List;
 class CustomerTableModel extends AbstractTableModel {
 
     private String[] columnNames = {
-            "ID",
             "Last Name",
             "First Name",
             "Address",
@@ -85,6 +84,8 @@ class CustomerTableModel extends AbstractTableModel {
                 return someCustomerObject.getbp();
             case Constants.NP_COL:
                 return someCustomerObject.getnp();
+            case Constants.ID_COL:
+                return someCustomerObject.getId();
             case Constants.OBJECT_COL:
                 return someCustomerObject;
             default:
